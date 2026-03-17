@@ -5,7 +5,7 @@ import OceanGlobe from './OceanGlobe'
 import { sendFloatMessage } from '../utils/floatChatApi'
 import Plot from 'react-plotly.js'
 const STARTERS = [
-  'What is an Agro Float ?',
+  'What is an Argo Float?',
   'Show me how temperature varies from the year 2000 to 2026',
   'What salinity data is available for 2023?',
   'Why does temperature decrease with the  increase in depth?'
