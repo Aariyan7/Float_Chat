@@ -23,7 +23,7 @@ const sectionToNav = {
   'use-cases':    '#use-cases',
 }
 
-export default function Navbar({ onLoginClick }) {
+export default function Navbar({ onChatClick }) {
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled]       = useState(false)
   const [menuOpen, setMenuOpen]       = useState(false)
@@ -133,11 +133,11 @@ export default function Navbar({ onLoginClick }) {
             </button>
 
             <button
-              id="login-btn"
-              onClick={onLoginClick}
+              id="view-floats-btn"
+              onClick={onChatClick}
               className="hidden sm:inline-flex items-center h-8 px-3 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-150"
             >
-              Log In
+              View Floats
             </button>
 
             <button
@@ -178,8 +178,8 @@ export default function Navbar({ onLoginClick }) {
             )
           })}
           <div className="mt-2 pt-2 border-t border-zinc-100 dark:border-zinc-800">
-            <button onClick={onLoginClick} className="w-full flex items-center justify-center h-9 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors duration-150">
-              Log In
+            <button onClick={onChatClick} className="w-full flex items-center justify-center h-9 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors duration-150">
+              View Floats
             </button>
           </div>
         </div>
