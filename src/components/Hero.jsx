@@ -12,7 +12,7 @@ const terminalLines = [
   { prefix: '  ', text: '✓ Visualization ready', color: 'text-emerald-400' },
 ]
 
-export default function Hero() {
+export default function Hero({ onStartTour }) {
   const { theme } = useTheme()
   const termRef = useRef(null)
 
@@ -80,28 +80,18 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="animate-fade-up opacity-0 animate-delay-400 flex flex-col sm:flex-row items-center justify-center gap-3 mb-16"
+        <div className="animate-fade-up opacity-0 animate-delay-400 flex items-center justify-center mb-16"
           style={{ animationFillMode: 'forwards' }}
         >
-          <a
-            href="#"
+          <button
             id="try-demo-btn"
-            className="group inline-flex items-center gap-2 h-11 px-6 rounded-md bg-black dark:bg-white text-white dark:text-black text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-all duration-150 shadow-lg"
+            onClick={onStartTour}
+            className="group inline-flex items-center gap-3 h-14 px-8 rounded-lg bg-black dark:bg-white text-white dark:text-black text-lg font-bold hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
-            <PlayCircle className="w-4 h-4" />
-            Try the Demo
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" />
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            id="github-btn"
-            className="inline-flex items-center gap-2 h-11 px-6 rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white text-sm font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all duration-150"
-          >
-            <Github className="w-4 h-4" />
-            View on GitHub
-          </a>
+            <PlayCircle className="w-6 h-6" />
+            Get Started
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-200" />
+          </button>
         </div>
 
         {/* Terminal preview */}

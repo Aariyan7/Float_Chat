@@ -439,14 +439,14 @@ export default function ChatInterface({ onBack }) {
             {activeConv?.title || 'New conversation'}
           </span>
 
-          {/* Mobile: quick back link */}
-          <button
-            onClick={onBack}
-            className="md:hidden ml-auto flex items-center gap-1 text-xs text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+          <a
+            href="https://float-chat-dashboard.streamlit.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-auto inline-flex items-center h-8 px-3 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-150"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Home
-          </button>
+            View Dashboard
+          </a>
         </header>
 
         {/* Messages */}
@@ -492,6 +492,7 @@ export default function ChatInterface({ onBack }) {
             className="flex items-end gap-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 sm:px-4 py-3 shadow-sm focus-within:ring-2 focus-within:ring-black/10 dark:focus-within:ring-white/10 focus-within:border-zinc-400 dark:focus-within:border-zinc-600 transition-all"
           >
             <textarea
+              id="chat-input"
               ref={inputRef}
               value={input}
               onChange={e => setInput(e.target.value)}

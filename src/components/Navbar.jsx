@@ -23,7 +23,7 @@ const sectionToNav = {
   'use-cases':    '#use-cases',
 }
 
-export default function Navbar({ onChatClick }) {
+export default function Navbar({ onChatClick, tourStep }) {
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled]       = useState(false)
   const [menuOpen, setMenuOpen]       = useState(false)
@@ -132,13 +132,15 @@ export default function Navbar({ onChatClick }) {
               }
             </button>
 
-            <button
+            <a
               id="view-floats-btn"
-              onClick={onChatClick}
+              href="https://float-chat-dashboard.streamlit.app/"
+              target="_blank"
+              rel="noreferrer"
               className="hidden sm:inline-flex items-center h-8 px-3 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-150"
             >
-              View Floats
-            </button>
+              View Dashboard
+            </a>
 
             <button
               id="mobile-menu-toggle"
@@ -155,7 +157,7 @@ export default function Navbar({ onChatClick }) {
       {/* Mobile drawer */}
       <div
         className={`fixed inset-x-0 top-14 z-40 transition-all duration-300 md:hidden ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          (menuOpen || tourStep === 1) ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         <div className={`border-b ${theme === 'dark' ? 'bg-black/95 border-zinc-800' : 'bg-white/95 border-zinc-200'} backdrop-blur-lg px-4 py-4 flex flex-col gap-1`}>
@@ -178,9 +180,14 @@ export default function Navbar({ onChatClick }) {
             )
           })}
           <div className="mt-2 pt-2 border-t border-zinc-100 dark:border-zinc-800">
-            <button onClick={onChatClick} className="w-full flex items-center justify-center h-9 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors duration-150">
-              View Floats
-            </button>
+            <a 
+              href="https://float-chat-dashboard.streamlit.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center h-9 text-sm font-medium rounded-md border border-zinc-200 dark:border-zinc-700 text-black dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors duration-150"
+            >
+              View Dashboard
+            </a>
           </div>
         </div>
       </div>
